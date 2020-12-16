@@ -8,13 +8,11 @@ public class Solution495 {
         int finishTime = timeSeries[0];
         for (int time : timeSeries) {
             if (finishTime > time) {
-                int currentPoisonedDuration = duration - finishTime + time;
-                if (currentPoisonedDuration > 0) {
-                    finishTime += currentPoisonedDuration;
-                    poisonedDuration += currentPoisonedDuration;
-                }
+                int currentPoisonedDuration = duration - (finishTime - time);
+                finishTime += currentPoisonedDuration;
+                poisonedDuration += currentPoisonedDuration;
             } else {
-                finishTime += duration;
+                finishTime = time + duration;
                 poisonedDuration += duration;
             }
         }
