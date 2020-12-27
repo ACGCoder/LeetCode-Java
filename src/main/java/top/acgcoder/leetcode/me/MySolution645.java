@@ -1,9 +1,11 @@
 package top.acgcoder.leetcode.me;
 
+import top.acgcoder.leetcode.Solution645;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solution645 {
+public class MySolution645 implements Solution645 {
  /*   public int[] findErrorNums(int[] nums) {
         int sum = 0;
         int duplicatedValue = 0;
@@ -19,6 +21,7 @@ public class Solution645 {
         return new int[]{duplicatedValue, expectedSum - (sum - duplicatedValue)};
     }*/
 
+    @Override
     public int[] findErrorNums(int[] nums) {
         int misssingValue = 0;
         int duplicatedValue = 0;

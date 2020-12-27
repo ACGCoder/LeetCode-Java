@@ -1,6 +1,9 @@
 package top.acgcoder.leetcode.me;
 
-public class Solution414 {
+import top.acgcoder.leetcode.Solution414;
+
+public class MySolution414 implements Solution414 {
+    @Override
     public int thirdMax(int[] nums) {
         int max = nums[0];
         int min = nums[0];

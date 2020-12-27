@@ -1,6 +1,9 @@
 package top.acgcoder.leetcode.me;
 
-public class Solution495 {
+import top.acgcoder.leetcode.Solution495;
+
+public class MySolution495 implements Solution495 {
+    @Override
     public int findPoisonedDuration(int[] timeSeries, int duration) {
         if(timeSeries.length == 0)
             return 0;

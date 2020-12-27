@@ -1,15 +1,17 @@
-package top.acgcoder.leetcode.best;
+package top.acgcoder.leetcode.me;
 
 import org.junit.jupiter.api.Test;
-import top.acgcoder.leetcode.me.Solution485;
+import top.acgcoder.leetcode.Solution485;
+import top.acgcoder.leetcode.best.BestSolution485;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BestSolution485Test {
+public class Solution485Test {
+    private Solution485 solution485 = new BestSolution485();
+//    private Solution485 solution485 = new MySolution485();
 
     @Test
-    void findMaxConsecutiveOnes() {
-        BestSolution485 solution485 = new BestSolution485();
+    public void testFindMaxConsecutiveOnes(){
         int[] nums1 = {1,1,0,1,1,1};
         assertEquals(3,solution485.findMaxConsecutiveOnes(nums1));
 

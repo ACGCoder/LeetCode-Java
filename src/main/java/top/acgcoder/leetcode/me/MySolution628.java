@@ -1,6 +1,9 @@
 package top.acgcoder.leetcode.me;
 
-public class Solution628 {
+import top.acgcoder.leetcode.Solution628;
+
+public class MySolution628 implements Solution628 {
+    @Override
     public int maximumProduct(int[] nums) {
         if(nums.length == 3)
             return nums[0] * nums[1] * nums[2];

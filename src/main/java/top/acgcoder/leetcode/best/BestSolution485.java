@@ -1,6 +1,9 @@
 package top.acgcoder.leetcode.best;
 
-public class BestSolution485 {
+import top.acgcoder.leetcode.Solution485;
+
+public class BestSolution485 implements Solution485 {
+    @Override
     public int findMaxConsecutiveOnes(int[] nums) {
         int length = nums.length;
         int left = 0;
