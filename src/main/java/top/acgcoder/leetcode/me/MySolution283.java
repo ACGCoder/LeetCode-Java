@@ -13,7 +13,7 @@ public class MySolution283 implements Solution283 {
             while((notZeroElementIndex < nums.length - 1) && nums[notZeroElementIndex] == 0 || notZeroElementIndex == i)
                 notZeroElementIndex++;
             if(notZeroElementIndex > nums.length - 1)
-                notZeroElementIndex = nums.length - 1;
+                break;
             if(nums[i] == 0){
                 nums[i] += nums[notZeroElementIndex];
                 nums[notZeroElementIndex] = 0;
