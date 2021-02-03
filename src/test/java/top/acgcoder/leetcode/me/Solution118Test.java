@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MySolution118Test {
+class Solution118Test {
 
     private Solution118 solution118 = new MySolution118();
 
