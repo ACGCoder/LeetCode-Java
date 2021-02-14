@@ -23,8 +23,8 @@ class Solution303Test {
 
     private void init(int[] nums){
         if(useBest)
-            solution303 = new MySolution303(nums);
-        else
             solution303 = new BestSolution303(nums);
+        else
+            solution303 = new MySolution303(nums);
     }
 }
