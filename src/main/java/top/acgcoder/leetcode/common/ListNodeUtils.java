@@ -11,6 +11,20 @@ public class ListNodeUtils {
         return node;
     }
 
+    public static ListNode arrayToNode(int[] nums, int cycleIndex) {
+        ListNode head = ListNodeUtils.arrayToNode(nums);
+        if (cycleIndex >= 0 && cycleIndex < nums.length) {
+            ListNode cycleNode = null, node = head;
+            int i = 0;
+            while (node.next != null) {
+                if (i++ == cycleIndex)
+                    cycleNode = node;
+                node = node.next;
+            }
+            node.next = cycleNode;
+        }
+        return head;
+    }
 
     public static int[] nodeToArray(ListNode node) {
         ArrayList<Integer> result = new ArrayList<>();
