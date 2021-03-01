@@ -1,37 +1,38 @@
 package top.acgcoder.leetcode.common;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+
 public class TreeNodeUtils {
-    public static TreeNode arrayToTreeNode(String[] nums) {
-        TreeNode treeNode = new TreeNode();
-        int index = 0;
-        index = constructTreeNode(nums, treeNode, index);
-        index = constructTreeNode(nums, treeNode.left, index);
-        constructTreeNode(nums, treeNode.right, index);
+    private static ArrayDeque<String> queue;
+
+    public static TreeNode arrayToTreeNode(String[] values) {
+        queue = new ArrayDeque<>(values.length);
+        queue.addAll(Arrays.asList(values));
+
+        TreeNode treeNode = null;
+        if (queue.peek() != null){
+            treeNode = new TreeNode(Integer.parseInt(queue.poll()));
+            constructTreeNode(treeNode);
+        }
         return treeNode;
     }
 
-    private static int constructTreeNode(String[] nums, TreeNode treeNode, int index) {
-        if (index >= nums.length || "null".equals(nums[index])) {
-            return index;
-        }
+    private static void constructTreeNode(TreeNode treeNode) {
+        if (treeNode == null)
+            return;
 
-        treeNode.val = Integer.parseInt(nums[index++]);
-        if (index >= nums.length || "null".equals(nums[index])) {
-            treeNode.left = null;
-            index++;
-        } else {
-            treeNode.left = new TreeNode(Integer.parseInt(nums[index++]));
-        }
-        if (index >= nums.length || "null".equals(nums[index])) {
-            treeNode.right = null;
-            index++;
-        } else {
-            treeNode.right = new TreeNode(Integer.parseInt(nums[index++]));
-        }
+        if ("null".equals(queue.peek()))
+            queue.poll();
+        else if(queue.peek() != null)
+            treeNode.left = new TreeNode(Integer.parseInt(queue.poll()));
 
-        index = constructTreeNode(nums, treeNode.left, index);
-        index = constructTreeNode(nums, treeNode.right, index);
+        if ("null".equals(queue.peek()))
+            queue.poll();
+        else if(queue.peek() != null)
+            treeNode.right = new TreeNode(Integer.parseInt(queue.poll()));
 
-        return index;
+        constructTreeNode(treeNode.left);
+        constructTreeNode(treeNode.right);
     }
 }
