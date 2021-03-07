@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Solution100Test {
 
-//    private Solution100 solution100 = new MySolution100();
-    private Solution100 solution100 = new BestSolution100();
+//    private final Solution100 solution100 = new MySolution100();
+    private final Solution100 solution100 = new BestSolution100();
 
     @Test
     void isSameTree() {
-        assertFalse(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "2"}), TreeNodeUtils.arrayToTreeNode(new String[]{"1", "null", "2"})));
-        assertFalse(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "2", "1"}), TreeNodeUtils.arrayToTreeNode(new String[]{"1", "1", "2"})));
-        assertTrue(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "2", "3"}), TreeNodeUtils.arrayToTreeNode(new String[]{"1", "2", "3"})));
+        assertFalse(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 2}), TreeNodeUtils.arrayToTreeNode(new Integer[]{1, null, 2})));
+        assertFalse(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 2, 1}), TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 1, 2})));
+        assertTrue(solution100.isSameTree(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 2, 3}), TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 2, 3})));
     }
 }

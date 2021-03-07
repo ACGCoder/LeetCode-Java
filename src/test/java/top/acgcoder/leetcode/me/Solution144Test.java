@@ -20,30 +20,30 @@ class Solution144Test {
     @Test
     void preorderTraversal1() {
         List<Integer> expected = Stream.of(1, 2, 3).collect(Collectors.toList());
-        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "null", "2", "3"})));
+        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, null, 2, 3})));
     }
 
     @Test
     void preorderTraversal2() {
         List<Integer> expected = Stream.of(1).collect(Collectors.toList());
-        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new String[]{"1"})));
+        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new Integer[]{1})));
     }
 
     @Test
     void preorderTraversal3() {
         List<Integer> expected = Collections.emptyList();
-        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new String[]{})));
+        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new Integer[]{})));
     }
 
     @Test
     void preorderTraversal4() {
         List<Integer> expected = Stream.of(1, 2).collect(Collectors.toList());
-        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "2"})));
+        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, 2})));
     }
 
     @Test
     void preorderTraversal5() {
         List<Integer> expected = Stream.of(1, 2).collect(Collectors.toList());
-        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new String[]{"1", "null", "2"})));
+        assertEquals(expected, solution144.preorderTraversal(TreeNodeUtils.arrayToTreeNode(new Integer[]{1, null, 2})));
     }
 }
